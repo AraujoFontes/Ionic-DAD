@@ -16,10 +16,15 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'Marcar Consulta',
       url: '/list',
-      icon: 'list'
-    }
+      icon: 'clock'
+    },
+    {
+      title: 'Configurações',
+      url: '/list',
+      icon: 'settings'
+    },
   ];
 
   constructor(
