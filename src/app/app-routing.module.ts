@@ -19,10 +19,6 @@ const routes: Routes = [
     path: 'login',
     loadChildren: './login/login.module#LoginPageModule'
   },
-  {
-    path: 'teste',
-    loadChildren: './home/home.module#HomePageModule'
-  }
 ];
 
 @NgModule({

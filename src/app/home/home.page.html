@@ -4,22 +4,69 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      Associação Bichos Gerais
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h1 text-center margin-bottom>Exemplo de API REST</h1>
-  
-  <button ion-button block (click)="openCreateAccount()">Criar conta</button>
-  <ion-button color="light" href="/login" routerDirection="login.page">Login</ion-button>
-  <button ion-button block (click)="openListUsers()">CRUD de usuários</button>
-  
-  <ion-button color="light" (click)="teste()" >TESTE</ion-button>
-
-  <h1>Resultado</h1>
-  <p class="teste">
+  <h1 text-center>Lembrete de Consultas</h1>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Consulta do animal XXXX</ion-card-title>
+    </ion-card-header>
     
-  </p>
+    <ion-card-content>
+      Horário da Consulta: xx:xx
+    </ion-card-content>
+  </ion-card>
+  
+  <h1 text-center margin-bottom margin-top>Meus Animais</h1>
+  <ion-list class="listAnimal">
+    <ion-item>
+      <ion-label>Pokémon Yellow</ion-label>
+      <ion-button slot="end" color="success">
+        <ion-icon name="clock"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mega Man X </ion-label>
+      <ion-button slot="end" color="success">
+        <ion-icon name="clock"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>The Legend of Zelda</ion-label>
+      <ion-button slot="end" color="success">
+        <ion-icon name="clock"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pac-Man</ion-label>
+      <ion-button slot="end" color="success">
+        <ion-icon name="clock"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Super Mario World</ion-label>
+      <ion-button slot="end" color="success">
+        <ion-icon name="clock"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
