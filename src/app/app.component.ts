@@ -17,12 +17,22 @@ export class AppComponent {
     },
     {
       title: 'Marcar Consulta',
-      url: '/list',
+      url: '/consulta',
       icon: 'clock'
     },
     {
+      title: 'Efetuar Consulta',
+      url: '/efetuar-consulta',
+      icon: 'checkbox-outline'
+    },
+    {
+      title: 'Relatório de Consulta',
+      url: '/relatorio',
+      icon: 'analytics'
+    },
+    {
       title: 'Configurações',
-      url: '/list',
+      url: '/consulta',
       icon: 'settings'
     },
   ];
