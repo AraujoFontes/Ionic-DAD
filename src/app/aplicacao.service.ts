@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-
+import { SessionService } from './session.service';
+import { Usuario } from './models/usuario';
 @Injectable({
   providedIn: 'root'
 })
 export class AplicacaoService {
   
-  constructor(public http: Http) { }
+  usuario: Usuario;
+
+  constructor(public http: Http, public session: SessionService) { }
   
   private API_URL = 'https://devel8.dialhost.com.br/projetos/trabalhoDAD-laravel/public/api/';
   
@@ -43,5 +46,12 @@ export class AplicacaoService {
             reject(error.json());
           });
     });
+  }
+
+  criaSession() {
+    
+    //disparando a sessão
+    this.session.create(this.usuario);
+
   }
 }

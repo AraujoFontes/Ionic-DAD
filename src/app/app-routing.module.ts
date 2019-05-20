@@ -31,6 +31,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: './login/login.module#LoginPageModule'
   },
+  { path: 'animal', loadChildren: './animal/animal.module#AnimalPageModule' },
 ];
 
 @NgModule({
