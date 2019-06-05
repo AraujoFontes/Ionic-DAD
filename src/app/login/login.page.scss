@@ -1,5 +1,6 @@
 .login{
     margin: 50% 5%;
+    
     .logar{
         display:flex;
         justify-content: space-between;
@@ -15,5 +16,10 @@
         text-align: right;
         font-size: 14px;
         margin-top: 10px;
+    }
+}
+@media screen and(min-width: 426px){
+    .login{
+        margin: 20%;
     }
 }

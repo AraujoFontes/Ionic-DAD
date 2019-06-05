@@ -12,13 +12,26 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
+    path: 'consulta',
+    loadChildren: './consulta/consulta.module#ConsultaPageModule'
+  },
+  {
+    path: 'efetuar-consulta',
+    loadChildren: './consulta/efetuarConsulta.module#EfetuarConsultaPageModule'
+  },
+  {
+    path: 'gerar-relatorio',
+    loadChildren: './consulta/efetuarConsulta.module#EfetuarConsultaPageModule'
+  },
+  {
+    path: 'consultas',
+    loadChildren: './consulta/efetuarConsulta.module#EfetuarConsultaPageModule'
   },
   {
     path: 'login',
     loadChildren: './login/login.module#LoginPageModule'
   },
+  { path: 'animal', loadChildren: './animal/animal.module#AnimalPageModule' },
 ];
 
 @NgModule({

@@ -26,10 +26,5 @@ describe('LoginPage', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have a list of 10 elements', () => {
-    loginPage = fixture.nativeElement;
-    const items = loginPage.querySelectorAll('ion-item');
-    expect(items.length).toEqual(10);
-  });
 
 });
