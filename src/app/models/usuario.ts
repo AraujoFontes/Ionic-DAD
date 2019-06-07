@@ -5,12 +5,16 @@ export class Model {
 }
 //classe usuario extendendo a classe Model
 export class Usuario extends Model {
-    nome_usuario: string;
-    senha: string;
     nome: string;
     sobrenome: string;
     cpf: string;
     data_nascimento: string;
     email: string;
     qtdanimais: string;
+    logradouro : string;
+    bairro: string;
+    cidade: string;
+    estado: string;
+    numero: string;
+    admin: boolean;
 }

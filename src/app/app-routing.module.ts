@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { LogoutComponent } from './logout/logout.component';
 const routes: Routes = [
   {
     path: '',
@@ -31,7 +31,13 @@ const routes: Routes = [
     path: 'login',
     loadChildren: './login/login.module#LoginPageModule'
   },
+  {
+    path: 'logout',
+    component: LogoutComponent
+  },
   { path: 'animal', loadChildren: './animal/animal.module#AnimalPageModule' },
+  { path: 'logout', loadChildren: './logout/logout.module#LogoutPageModule' },
+
 ];
 
 @NgModule({

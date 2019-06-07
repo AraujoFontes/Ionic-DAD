@@ -11,28 +11,17 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   constructor(private aplicacaoService: AplicacaoService, private session: SessionService, private router: Router){}
-  teste() {
-    this.aplicacaoService.teste()
-      .then((result: any) => {
-        console.log(result);
-      })
-      .catch((error: any) => {
-      });
-  }
-  ngOnInit() {
 
+  ngOnInit() {
     this.session.get()
       .then(res => {
-
-        if (res) {
-          console.log(res);
+        if (res.admin) {
+          // console.log(res);
         }
         else {
           this.router.navigate(['/login']);
         }
 
       });
-
-
   }
 }

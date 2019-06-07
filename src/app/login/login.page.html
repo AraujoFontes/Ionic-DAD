@@ -9,19 +9,19 @@
   <ion-list class="login">
     <ion-item>
       <ion-label stacked>Usuário</ion-label>
-      <ion-input type="text" name="email" ></ion-input>
+      <ion-input type="text" name="user" value="" id="user"  [(ngModel)]="user"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Senha</ion-label>
-      <ion-input type="password" name="password" ></ion-input>
+      <ion-input type="password" name="password" value="" id="password" [(ngModel)]="password"></ion-input>
     </ion-item>
     <div class="esquecisenha">
       <a href="" >Esqueci minha senha</a>
     </div>
     
     <div class="logar">
-      <ion-button class="button" block (click)="login()" color="light">Criar Conta</ion-button>
-      <ion-button class="button" block (click)="login()" color="success">Logar</ion-button>
+      <ion-button class="button"  full  (click)="loginUser()" color="light">Criar Conta</ion-button>
+      <ion-button class="button" full (click)="loginUser()" color="success">Logar</ion-button>
     </div>
   </ion-list>
 </ion-content>
