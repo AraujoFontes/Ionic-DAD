@@ -9,11 +9,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
   <h1 text-center>Lembrete de Consultas</h1>
-  <ion-card>
+  <ion-card *ngFor="let p of consultasPage">
     <ion-card-header>
-      <ion-card-title>Consulta do animal XXXX</ion-card-title>
+      <ion-card-title>Consulta do animal {{p.title}}</ion-card-title>
     </ion-card-header>
     
     <ion-card-content>
