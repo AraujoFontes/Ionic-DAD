@@ -11,19 +11,15 @@ export class AplicacaoService {
   
   constructor(public http: Http, public session: SessionService) { }
   
-  private API_URL = 'http://localhost/trabalhoDAD/public/api/';
+  private API_URL = 'http://localhost:8000/api/';
   
   login(nome_usuario: string, senha: string){  
-
-    let headers = new Headers();
     var data = {
       nome_usuario: nome_usuario,
       senha: senha
     };
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
     return new Promise((resolve, reject) => {
-      this.http.post('http://localhost/trabalhoDAD/public/api/usuario/login', data)
+      this.http.post(this.API_URL+'usuario/login', data)
       .subscribe((result: any) => {
         resolve(result.json());
       },
@@ -35,10 +31,15 @@ export class AplicacaoService {
   logout(){
     this.session.remove();
   }
-  criaSession() {
-    
-    //disparando a sessão
-    this.session.create(this.usuario);
-    
+  todosAnimais(){
+    return new Promise((resolve, reject) => {
+      this.http.get(this.API_URL + 'usuario/login')
+        .subscribe((result: any) => {
+          resolve(result.json());
+        },
+          (error) => {
+            reject(error.json());
+          });
+    });
   }
 }
