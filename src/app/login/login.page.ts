@@ -5,6 +5,7 @@ import { AplicacaoService } from '../aplicacao.service';
 import { Usuario } from '../models/usuario';
 import { Admin  } from '../models/admin';
 import { Animal  } from '../models/animal';
+import { Consulta  } from '../models/consulta';
 @Component({
   selector: 'app-login',
   templateUrl: 'login.page.html',
@@ -14,6 +15,7 @@ export class LoginPage implements OnInit {
   usuario: Usuario;
   admin: Admin;
   animal: Animal;
+  consulta: Consulta;
   user: string;
   password: string;
   constructor(public session: SessionService, public aplicacao: AplicacaoService, public router: Router) {  }
@@ -24,6 +26,7 @@ export class LoginPage implements OnInit {
     .then((result:any) => {
       if(result.code == 200){
         this.usuario = {
+          nome_usuario: result.dados.nome_usuario,
           nome: result.dados.nome,
           sobrenome: result.dados.sobrenome,
           cpf: result.dados.cpf,
@@ -51,6 +54,15 @@ export class LoginPage implements OnInit {
             data_nascimento: result.dados.data_nascimento,
           }
           this.session.createAnimal(this.animal);
+        }
+        if (result.dados.consulta) {
+          this.consulta = {
+            status: result.dados.consulta.status,
+            observacoes: result.dados.consulta.observacoes,
+            data_hora: result.dados.consulta.data_hora,
+            nome_admin: result.dados.consulta.admin,
+          }
+          this.session.createConsulta(this.consulta);
         }
         this.session.create(this.usuario);
         location.href = 'http://localhost:8100/home';

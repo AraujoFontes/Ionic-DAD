@@ -11,56 +11,20 @@
 
 <ion-content >
   <h1 text-center>Lembrete de Consultas</h1>
-  <ion-card *ngFor="let p of consultasPage">
+  <ion-card *ngFor="let p of homePage">
     <ion-card-header>
-      <ion-card-title>Consulta do animal {{p.title}}</ion-card-title>
+      <ion-card-title *ngFor="let b of home2Page">Consulta do animal {{b.nome}}</ion-card-title>
     </ion-card-header>
     
     <ion-card-content>
-      Horário da Consulta: xx:xx
+      Horário da Consulta: {{p.data_hora}}
     </ion-card-content>
   </ion-card>
   
   <h1 text-center margin-bottom margin-top>Meus Animais</h1>
-  <ion-list class="listAnimal">
+  <ion-list class="listAnimal" *ngFor="let b of home2Page">
     <ion-item>
-      <ion-label>Pokémon Yellow</ion-label>
-      <ion-button slot="end" color="success">
-        <ion-icon name="clock"></ion-icon>
-      </ion-button>
-      <ion-button slot="end" color="danger">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Mega Man X </ion-label>
-      <ion-button slot="end" color="success">
-        <ion-icon name="clock"></ion-icon>
-      </ion-button>
-      <ion-button slot="end" color="danger">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>The Legend of Zelda</ion-label>
-      <ion-button slot="end" color="success">
-        <ion-icon name="clock"></ion-icon>
-      </ion-button>
-      <ion-button slot="end" color="danger">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pac-Man</ion-label>
-      <ion-button slot="end" color="success">
-        <ion-icon name="clock"></ion-icon>
-      </ion-button>
-      <ion-button slot="end" color="danger">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Super Mario World</ion-label>
+      <ion-label>{{b.nome}}</ion-label>
       <ion-button slot="end" color="success">
         <ion-icon name="clock"></ion-icon>
       </ion-button>

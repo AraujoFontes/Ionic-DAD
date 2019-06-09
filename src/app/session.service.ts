@@ -37,7 +37,6 @@ export class SessionService {
   getConsulta(): Promise<any> {
     return this.storage.get('consulta');
   }
-
   remove() {
     this.storage.remove('usuario');
     this.storage.remove('admin');

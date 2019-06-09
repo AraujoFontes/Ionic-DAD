@@ -9,5 +9,4 @@ export class Consulta extends Model {
     observacoes: string;
     data_hora: string;
     nome_admin: string;
-    nome_associado: string;
 }

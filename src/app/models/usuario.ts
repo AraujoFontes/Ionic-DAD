@@ -5,6 +5,7 @@ export class Model {
 }
 //classe usuario extendendo a classe Model
 export class Usuario extends Model {
+    nome_usuario: string;
     nome: string;
     sobrenome: string;
     cpf: string;
