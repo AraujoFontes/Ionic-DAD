@@ -8,5 +8,5 @@ export class Animal extends Model {
     nome: string;
     historico: string;
     data_nascimento: string;
-
+    id: Int16Array;
 }

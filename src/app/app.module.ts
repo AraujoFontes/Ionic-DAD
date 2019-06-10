@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { LogoutComponent } from './logout/logout.component';
+
 @NgModule({
   declarations: [AppComponent, LogoutComponent],
   entryComponents: [],

@@ -8,6 +8,7 @@ import { Usuario } from './models/usuario';
 export class AplicacaoService {
   
   usuario: Usuario;
+  date={};
   
   constructor(public http: Http, public session: SessionService) { }
   
@@ -31,26 +32,48 @@ export class AplicacaoService {
   logout(){
     this.session.remove();
   }
-  todosAnimais(){
-    return new Promise((resolve, reject) => {
-      this.http.get(this.API_URL + 'usuario/login')
-        .subscribe((result: any) => {
-          resolve(result.json());
-        },
-          (error) => {
-            reject(error.json());
-          });
-    });
-  }
   criarConta(dados){
     return new Promise((resolve, reject) => {
-      this.http.post(this.API_URL + 'usuario/cadastro',dados)
-        .subscribe((result: any) => {
-          resolve(result.json());
-        },
-          (error) => {
-            reject(error.json());
-          });
+      this.http.post(this.API_URL + 'usuario/cadastro', dados)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
+  cadastrarAnimal(dados){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.API_URL + 'animal', dados)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
+  cadastrarConsulta(dados){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.API_URL + 'usuario/consultar', dados)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
+  retirarAnimal(id){
+    return new Promise((resolve, reject) => {
+      this.http.delete(this.API_URL + 'animal?id='+id)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
     });
   }
 }

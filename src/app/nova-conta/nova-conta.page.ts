@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AplicacaoService } from '../aplicacao.service';
+import { ValidationService } from '../validation.service';
 @Component({
   selector: 'app-nova-conta',
   templateUrl: './nova-conta.page.html',
@@ -39,7 +40,8 @@ export class NovaContaPage implements OnInit {
   numero:string;
   cep:string;
 
-  constructor(public aplicacao: AplicacaoService, public alert: AlertController, public router: Router) { }
+  constructor(public aplicacao: AplicacaoService, public alert: AlertController
+    , public router: Router, public validation : ValidationService) { }
   
   ngOnInit() {
   }
@@ -60,13 +62,20 @@ export class NovaContaPage implements OnInit {
       numero:this.numero,
       cep:this.cep,
     }
-    this.aplicacao.criarConta(this.dados)
-    .then((result:any) => {
-      if(result.code == 200){
-        this.presentAlert();
-      }
-    });
-
+    if(this.validation.validatorUsuario(this.dados)){
+      this.aplicacao.criarConta(this.dados)
+      .then((result:any) => {
+        if(result.code == 200){
+          this.presentAlert();
+        }
+        else{
+          this.erroAlert();
+        }
+      });
+    }
+    else{
+      this.erroVazioAlert();
+    }
   }
   async presentAlert() {
     const alerts = await this.alert.create({
@@ -77,6 +86,29 @@ export class NovaContaPage implements OnInit {
           handler: () => {
             this.router.navigate(['/login']);
           }
+        }
+      ]
+    });
+    await alerts.present();
+  }
+  async erroAlert() {
+    const alerts = await this.alert.create({
+      header: 'Erro ao Cadastrar Usuario',
+      buttons: [
+        {
+          text: 'OK',
+        }
+      ]
+    });
+    await alerts.present();
+  }
+  async erroVazioAlert() {
+    const alerts = await this.alert.create({
+      header: 'Erro no Formulário',
+      message: 'Favor preencher corretamente o Formulário, provavelmente contém campos vazios.',
+      buttons: [
+        {
+          text: 'OK',
         }
       ]
     });
