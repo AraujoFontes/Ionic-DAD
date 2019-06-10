@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: './consulta/efetuarConsulta.module#EfetuarConsultaPageModule'
   },
   {
+    path: 'criar-conta',
+    loadChildren: './nova-conta/nova-conta.module#NovaContaPageModule'
+  },
+  {
     path: 'login',
     loadChildren: './login/login.module#LoginPageModule'
   },
@@ -36,7 +40,7 @@ const routes: Routes = [
     component: LogoutComponent
   },
   { path: 'animal', loadChildren: './animal/animal.module#AnimalPageModule' },
-  { path: 'logout', loadChildren: './logout/logout.module#LogoutPageModule' },
+  { path: 'nova-conta', loadChildren: './nova-conta/nova-conta.module#NovaContaPageModule' },
 
 ];
 

@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Associação Bichos Gerais
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="nova-conta">
+  <ion-list class="nova-conta">
+    <ion-item>
+      <ion-label stacked>Usuário</ion-label>
+      <ion-input type="text" name="nome_usuario" value="" id="nome_usuario"  [(ngModel)]="nome_usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="password" name="senha" value="" id="senha" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" name="nome" value="" id="nome" [(ngModel)]="nome"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label stacked>Sobrenome</ion-label>
+      <ion-input type="text" name="sobrenome" value="" id="sobrenome" [(ngModel)]="sobrenome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>CPF</ion-label>
+      <ion-input type="text" name="cpf" value="" id="cpf" [(ngModel)]="cpf"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Data de Nascimento</ion-label>
+      <ion-input type="text" name="data_nascimento" value="" id="data_nascimento" [(ngModel)]="data_nascimento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+      <ion-input type="email" name="email" value="" id="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Rua</ion-label>
+      <ion-input type="text" name="logradouro" value="" id="logradouro" [(ngModel)]="logradouro"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Bairro</ion-label>
+      <ion-input type="text" name="bairro" value="" id="bairro" [(ngModel)]="bairro"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Cidade</ion-label>
+      <ion-input type="text" name="cidade" value="" id="cidade" [(ngModel)]="cidade"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Estado</ion-label>
+      <ion-input type="text" name="estado" value="" id="estado" [(ngModel)]="estado"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Número</ion-label>
+      <ion-input type="text" name="numero" value="" id="numero" [(ngModel)]="numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Cep</ion-label>
+      <ion-input type="text" name="cep" value="" id="cep" [(ngModel)]="cep"></ion-input>
+    </ion-item>
+    <div class="logar">
+      <ion-button class="button" full (click)="criarConta()" color="success">Criar Conta</ion-button>
+    </div>
+  </ion-list>
+</ion-content>
