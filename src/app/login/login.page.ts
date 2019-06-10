@@ -50,8 +50,8 @@ export class LoginPage implements OnInit {
         if (result.dados.animal){
           this.animal = {
             nome: result.dados.animal.nome,
-            historico: result.dados.historico,
-            data_nascimento: result.dados.data_nascimento,
+            historico: result.dados.animal.historico,
+            data_nascimento: result.dados.animal.data_nascimento,
           }
           this.session.createAnimal(this.animal);
         }

@@ -33,7 +33,7 @@ export class AppComponent {
       this.session.get()
       .then(res => {
         if(res){
-          if(res.admin == true){
+          if(res.admin){
             this.appPages = [
               {
                 title: 'Home',
@@ -96,11 +96,8 @@ export class AppComponent {
               },
             ]
           }
-          this.initializeApp();
         }
-        else{
-          this.router.navigate(['/login']);
-        }
+        this.initializeApp();
         
       });
       

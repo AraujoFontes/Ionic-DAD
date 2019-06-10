@@ -42,4 +42,15 @@ export class AplicacaoService {
           });
     });
   }
+  criarConta(dados){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.API_URL + 'usuario/cadastro',dados)
+        .subscribe((result: any) => {
+          resolve(result.json());
+        },
+          (error) => {
+            reject(error.json());
+          });
+    });
+  }
 }
