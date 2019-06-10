@@ -19,10 +19,10 @@ export class SessionService {
   createAdmin(admin : Admin){
     this.storage.set('admin', admin);
   }
-  createAnimal(animal : Animal){
+  createAnimal(animal){
     this.storage.set('animal', animal);
   }
-  createConsulta(consulta : Consulta){
+  createConsulta(consulta){
     this.storage.set('consulta', consulta);
   }
   get(): Promise<any> {
@@ -38,12 +38,11 @@ export class SessionService {
     return this.storage.get('consulta');
   }
   remove() {
-    this.storage.remove('usuario');
-    this.storage.remove('admin');
-    this.storage.remove('animal');
-    this.storage.remove('consulta');
+     this.storage.clear();
   }
-
+  removeAnimal(){
+    this.storage.remove('animal');
+  }
   exist() {
     this.get().then(res => {
       if (res) {

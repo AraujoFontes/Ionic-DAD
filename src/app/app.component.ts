@@ -61,11 +61,6 @@ export class AppComponent {
                 icon: 'person-add'
               },
               {
-                title: 'Configurações',
-                url: '/consulta',
-                icon: 'settings'
-              },
-              {
                 title: 'Sair',
                 url: '/logout',
                 icon: 'log-out'
@@ -83,11 +78,6 @@ export class AppComponent {
                 title: 'Marcar Consulta',
                 url: '/consulta',
                 icon: 'clock'
-              },
-              {
-                title: 'Configurações',
-                url: '/consulta',
-                icon: 'settings'
               },
               {
                 title: 'Sair',

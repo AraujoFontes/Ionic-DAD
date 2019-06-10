@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>animal</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Associação Bichos Gerais
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding class="nova-conta">
+  <ion-list class="nova-conta">
+    <ion-item>
+      <ion-label stacked>Nome do Animal</ion-label>
+      <ion-input required type="text" name="nome" value="" id="nome"  [(ngModel)]="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Algum Histórico de doença" required name="historico" value="" id="historico" [(ngModel)]="historico"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Data de Nascimento</ion-label>
+      <ion-input required type="date" name="data_nascimento" value="" id="data_nascimento" [(ngModel)]="data_nascimento"></ion-input>
+    </ion-item>    
+    <div class="criar">
+      <ion-button class="button" full (click)="cadastrarAnimal  ()" color="success">Criar Animal</ion-button>
+    </div>
+  </ion-list>
 </ion-content>

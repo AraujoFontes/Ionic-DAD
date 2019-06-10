@@ -25,12 +25,13 @@
   <ion-list class="listAnimal" *ngFor="let b of home2Page">
     <ion-item>
       <ion-label>{{b.nome}}</ion-label>
-      <ion-button slot="end" color="success">
+      <ion-button slot="end" color="success" (click) = "marcarConsulta()" title="Marcar Consulta">
         <ion-icon name="clock"></ion-icon>
       </ion-button>
-      <ion-button slot="end" color="danger">
-        <ion-icon name="trash"></ion-icon>
+      <ion-button slot="end" color="danger" (click) = "retirarAnimal(b.id)" title="Excluir Animal"> 
+        <ion-icon name="trash" ></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
+  <ion-button class="cadastro" (click) = "cadastrarAnimal()" color="success">Cadastrar Animal</ion-button>
 </ion-content>

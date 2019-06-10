@@ -39,8 +39,10 @@ const routes: Routes = [
     path: 'logout',
     component: LogoutComponent
   },
-  { path: 'animal', loadChildren: './animal/animal.module#AnimalPageModule' },
+  { path: 'cadastro-animal', loadChildren: './animal/animal.module#AnimalPageModule' },
   { path: 'nova-conta', loadChildren: './nova-conta/nova-conta.module#NovaContaPageModule' },
+  { path: 'home-gestor', loadChildren: './home-gestor/home-gestor.module#HomeGestorPageModule' },
+
 
 ];
 
