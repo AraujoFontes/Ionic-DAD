@@ -19,13 +19,14 @@ export class HomePage {
     public home2Page = [];
     
     ngOnInit() {
+      this.session.getAdmin().then(res => {
+        if(res){
+          this.router.navigate(['/home-gestor'])
+        }
+      });
       this.session.get()
       .then(res => {
         if (res) {
-          if(res.admin){
-            this.session.getAdmin().then(resA => { });
-          }
-          
           this.session.getAnimal()
           .then(resAn => { 
             if(resAn){
@@ -51,19 +52,18 @@ export class HomePage {
         else {
           this.router.navigate(['/login']);
         }
-        
       });
     }
     cadastrarAnimal(){
-        this.session.getAnimal().then(res=>{
-          if(res){
-            this.alertaAnimal();
-          }
-          else{
-            this.router.navigate(['/cadastro-animal']);
-          }
-        });
-
+      this.session.getAnimal().then(res=>{
+        if(res){
+          this.alertaAnimal();
+        }
+        else{
+          this.router.navigate(['/cadastro-animal']);
+        }
+      });
+      
     }
     async alertaAnimal() {
       const alerts = await this.alert.create({
@@ -77,22 +77,39 @@ export class HomePage {
       });
       await alerts.present();
     }
-
-    retirarAnimal(id){
-      if(id !=undefined){
-        this.aplicacaoService.retirarAnimal(id)
-        .then(ret => {
-          if(ret){   
-            if(ret.code == 200){
-              this.session.getAnimal()
-              .then(resAn => { 
-                  this.session.removeAnimal();
-                  location.reload();
+    async temCerteza(id) {
+      const alerts = await this.alert.create({
+        header: 'Exclusão de animal',
+        message: 'Tem certeza que deseja excluir esse animal?',
+        buttons: [
+          {
+            text: 'OK',
+            handler: () => {
+              this.aplicacaoService.retirarAnimal(id)
+              .then(ret => {
+                if(ret){   
+                  if(ret.code == 200){
+                    this.session.getAnimal()
+                    .then(resAn => { 
+                      this.session.removeAnimal();
+                    });
+                  }
+                  this.Alert(ret.message);
+                }
               });
             }
-            this.Alert(ret.message);
+          },
+          {
+            text: 'Cancelar'
           }
-        });
+        ]
+      });
+      await alerts.present();
+    }
+    retirarAnimal(id){
+      if(id !=undefined){
+        this.temCerteza(id);
+        
       }
       console.log(id);
     }

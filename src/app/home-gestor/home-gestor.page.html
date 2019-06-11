@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home-gestor</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Associação Bichos Gerais
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content >
+  <h1 text-center>Consultas</h1>
+  <ion-card class="cardconsultas"*ngFor="let p of homePage">
+    <ion-card-header>
+      <ion-card-title >Consulta do animal <strong>{{p.animal.nome}}</strong></ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      Horário da Consulta: {{p.data_hora}}
+    </ion-card-content>
+    
+  </ion-card>
+  
+  <ion-button class="buttons" color="success" (click) = "efetuarConsulta()" title="Efetuar Consulta">
+    Efetuar Consulta
+  </ion-button>
+  
 </ion-content>

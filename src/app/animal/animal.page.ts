@@ -41,7 +41,7 @@ export class AnimalPage implements OnInit {
             location.href='/home';
           }
           else{
-            this.erroCadastro(resC.message);s
+            this.erroCadastro(resC.message);
           }
         });
       }

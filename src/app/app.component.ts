@@ -37,13 +37,8 @@ export class AppComponent {
             this.appPages = [
               {
                 title: 'Home',
-                url: '/home',
+                url: '/home-gestor',
                 icon: 'home'
-              },
-              {
-                title: 'Marcar Consulta',
-                url: '/consulta',
-                icon: 'clock'
               },
               {
                 title: 'Efetuar Consulta',
@@ -51,13 +46,8 @@ export class AppComponent {
                 icon: 'checkbox-outline'
               },
               {
-                title: 'Relatório de Consulta',
-                url: '/relatorio',
-                icon: 'analytics'
-              },
-              {
                 title: 'Cadastrar Gestor',
-                url: '/gestor',
+                url: '/novo-gestor',
                 icon: 'person-add'
               },
               {

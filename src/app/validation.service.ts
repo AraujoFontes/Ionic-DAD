@@ -59,6 +59,27 @@ export class ValidationService {
     }
     else{return true};
   }
+  validationEfetuar(consulta, observacao){
+    if(consulta == undefined ){
+      return false;
+    }
+    if(observacao == undefined){
+      return false;
+    }
+    else{return true};
+  }
+  validationGestor(usuario, crmv, matricula){
+    if(usuario == undefined ){
+      return false;
+    }
+    if(crmv == undefined){
+      return false;
+    }
+    if(matricula == undefined){
+      return false;
+    }
+    else{return true};
+  }
   validationCadastroConsulta(animal, data){
     if(animal == undefined ){
       return false;
