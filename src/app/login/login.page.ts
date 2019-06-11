@@ -21,11 +21,13 @@ export class LoginPage implements OnInit {
   consulta: Consulta;
   user: string;
   password: string;
+
   constructor(public session: SessionService, public aplicacao: AplicacaoService, 
     public router: Router, public validation: ValidationService, public alert : AlertController) {  }
   ngOnInit() {
   }
   loginUser(){
+
     if(this.validation.validationLogin(this.user, this.password)){
       this.aplicacao.login(this.user, this.password)
       .then((result:any) => {
@@ -75,7 +77,12 @@ export class LoginPage implements OnInit {
             this.session.createConsulta(this.consulta);
           }
           this.session.create(this.usuario);
-          location.href = 'http://localhost:8100/home';
+          if(result.dados.admin){
+            location.href = '/home-gestor';
+          }
+          else{
+            location.href = '/home';
+          }
         }
         else{
           this.nEncontradoAlert(result.message);

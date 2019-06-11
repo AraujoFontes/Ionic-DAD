@@ -65,9 +65,75 @@ export class AplicacaoService {
       });
     });
   }
+  buscarConsulta(){
+    return new Promise((resolve, reject) => {
+      this.http.get(this.API_URL + 'gestor/consultas')
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
+  efetuarConsulta(dados){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.API_URL + 'gestor/consultas', dados)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
+  efetuarConsultaPost(dados){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.API_URL + 'gestor/efetuar-consulta', dados)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
   retirarAnimal(id){
     return new Promise((resolve, reject) => {
       this.http.delete(this.API_URL + 'animal?id='+id)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
+  buscarUsuarios(){
+    return new Promise((resolve, reject) => {
+      this.http.get(this.API_URL + 'usuario/get')
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
+  cadastrarGestor(dados){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.API_URL + 'gestor', dados)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+    });
+  }
+  recaptcha(dados){
+    return new Promise((resolve, reject) => {
+      this.http.post('https://www.google.com/recaptcha/api/siteverify', dados)
       .subscribe((result: any) => {
         resolve(result.json());
       },

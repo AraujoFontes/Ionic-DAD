@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AplicacaoService } from '../aplicacao.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-gestor',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-gestor.page.scss'],
 })
 export class HomeGestorPage implements OnInit {
-
-  constructor() { }
+  homePage;
+  home2Page;
+  constructor(public aplicacao : AplicacaoService, public router: Router) { }
 
   ngOnInit() {
+    this.aplicacao.buscarConsulta().then( ret => {
+      this.homePage = ret;
+    });
+  }
+  efetuarConsulta(){
+    this.router.navigate(['/efetuar-consulta']);
   }
 
 }

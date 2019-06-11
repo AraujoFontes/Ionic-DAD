@@ -12,12 +12,20 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
+    path: 'home-gestor',
+    loadChildren: './home-gestor/home-gestor.module#HomeGestorPageModule'
+  },
+  {
     path: 'consulta',
     loadChildren: './consulta/consulta.module#ConsultaPageModule'
   },
   {
     path: 'efetuar-consulta',
     loadChildren: './consulta/efetuarConsulta.module#EfetuarConsultaPageModule'
+  },
+  {
+    path: 'novo-gestor',
+    loadChildren: './cadastrar-gestor/cadastrar-gestor.module#CadastrarGestorPageModule'
   },
   {
     path: 'gerar-relatorio',
@@ -42,6 +50,8 @@ const routes: Routes = [
   { path: 'cadastro-animal', loadChildren: './animal/animal.module#AnimalPageModule' },
   { path: 'nova-conta', loadChildren: './nova-conta/nova-conta.module#NovaContaPageModule' },
   { path: 'home-gestor', loadChildren: './home-gestor/home-gestor.module#HomeGestorPageModule' },
+  { path: 'cadastrar-gestor', loadChildren: './cadastrar-gestor/cadastrar-gestor.module#CadastrarGestorPageModule' },
+
 
 
 ];

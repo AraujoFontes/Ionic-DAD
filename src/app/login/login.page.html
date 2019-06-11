@@ -15,20 +15,9 @@
       <ion-label stacked>Senha</ion-label>
       <ion-input type="password" name="password" value="" id="password" [(ngModel)]="password"></ion-input>
     </ion-item>
-    <div class="esquecisenha">
-      <a href="" >Esqueci minha senha</a>
-    </div>
-    
     <div class="logar">
       <ion-button class="button criar"  full href="criar-conta" color="light">Criar Conta</ion-button>
       <ion-button class="button" full (click)="loginUser()" color="success">Logar</ion-button>
     </div>
   </ion-list>
 </ion-content>
-<script src="https://www.google.com/recaptcha/api.js?render=6LfZfaQUAAAAADr7qxy5kamSXdSOYo_xVt0CZ9xN"></script>
-<script>
-  grecaptcha.ready(function () {
-    grecaptcha.execute('6LfZfaQUAAAAADr7qxy5kamSXdSOYo_xVt0CZ9xN', { action: 'homepage' }).then(function (token) {
-    });
-  });
-</script>

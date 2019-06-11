@@ -13,14 +13,13 @@
   <h1 class="h1consulta" text-center>Consultas</h1>  
   <ion-item class="item-select">
     <ion-label>Consulta:</ion-label>
-    <ion-select  class="select-animal" cancel-text="Cancelar" placeholder="Selecionar">
-      <ion-select-option value="f">Ralf</ion-select-option>
-      <ion-select-option  value="m">Black</ion-select-option>
+    <ion-select  class="select-animal" [(ngModel)]="consulta"  cancel-text="Cancelar" placeholder="Selecionar">
+      <ion-select-option *ngFor="let p of homePage" value="{{p.id_consulta}}">{{p.animal.nome}} / {{p.usuario.nome}} {{p.usuario.sobrenome}}</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item>
-    <ion-label>Descrição:</ion-label>
-    <ion-textarea placeholder="Digite aqui.."></ion-textarea>
+    <ion-label>Observação:</ion-label>
+    <ion-textarea [(ngModel)]="observacoes" name="observacoes" value="" placeholder="Digite aqui.."></ion-textarea>
   </ion-item>
-  <ion-button expand="block" class="marcar-consulta" color="success"> Concluir </ion-button>  
+  <ion-button expand="block" class="marcar-consulta" (click)="efetuarConsulta()" color="success"> Concluir </ion-button>  
 </ion-content>

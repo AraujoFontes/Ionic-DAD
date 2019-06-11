@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Associação Bichos Gerais
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <h1 class="h1consulta" text-center>Cadastrar Gestor</h1>  
+    <ion-item class="item-select">
+      <ion-label>Usuário</ion-label>
+      <ion-select  [(ngModel)]="usuario" class="select-animal" cancel-text="Cancelar" placeholder="Selecionar">
+        <ion-select-option *ngFor="let b of userPage" value="{{b.nome_usuario}}">{{b.nome}} {{b.sobrenome}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item class="item-select">
+      <ion-label>CRMV</ion-label>
+      <ion-input required type="text" name="crmv" value="" id="crmv" [(ngModel)]="crmv"></ion-input>
+    </ion-item>
+    <ion-item class="item-select">
+      <ion-label>Matrícula</ion-label>
+      <ion-input required type="text" name="matricula" value="" id="matricula" [(ngModel)]="matricula"></ion-input>
+    </ion-item>
+  
+    <ion-button expand="block" class="btgestor" (click)="cadastrarGestor()" color="success"> Cadastrar </ion-button>  
+  </ion-content>
